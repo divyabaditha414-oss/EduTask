@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Edit Student</h2>
+
+<form method="POST">
+    Name: <input type="text" name="name" value="{{ student[0] }}"><br><br>
+    Roll: <input type="text" name="roll" value="{{ student[1] }}"><br><br>
+    Branch: <input type="text" name="branch" value="{{ student[2] }}"><br><br>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>

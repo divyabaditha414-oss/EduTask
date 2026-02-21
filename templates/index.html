@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Manage Students{% endblock %}
+
+{% block content %}
+
+<h3 class="mb-4">Manage Students</h3>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover text-nowrap">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll</th>
+                        <th>Branch</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student[1] }}</td>
+                        <td>{{ student[2] }}</td>
+                        <td>{{ student[3] }}</td>
+                        <td>{{ student[6] }}</td>
+                        <td>
+                            <a href="/edit/{{ student[0] }}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/delete/{{ student[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
